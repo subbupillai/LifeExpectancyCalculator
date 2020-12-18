@@ -1,0 +1,5 @@
+
+	<!-if(document.General.sex[0].checked==true)		<!-Male>
+		life=parseInt(77);
+	if(document.General.sex[1].checked==true)
+		life=parseInt(81);    ->

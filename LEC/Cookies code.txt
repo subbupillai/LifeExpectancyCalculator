@@ -1,0 +1,228 @@
+
+	if(document.get_details.place[0].checked==true)
+	{
+		p="urban";
+		document.cookie="place="+escape(p); 
+	}
+	if(document.get_details.polluted[0].checked==true)
+	{
+		pl="yes";
+		document.cookie="polluted="+escape(pl); 
+	}
+	if(document.get_details.drive[0].checked==true)
+	{
+		d="yes";
+		document.cookie="drive="+escape(d); 
+	}
+	if(document.get_details.smoke[0].checked==true)
+	{
+		s="yes";
+		document.cookie="smoke="+escape(s); 
+	}
+	if(document.get_details.drink[0].checked==true)
+	{
+		drnk="yes";
+		document.cookie="drink="+escape(drnk); 
+	}
+	if(document.get_details.diabetes[0].checked==true)
+	{
+		db="yes";
+		document.cookie="diabetes="+escape(db); 
+	} 
+	if(document.get_details.hbp[0].checked==true)
+	{
+		hb="yes";
+		document.cookie="hbp="+escape(hb); 
+	} 			
+	if(document.get_details.lbp[0].checked==true)
+	{
+		lb="yes";
+		document.cookie="lbp="+escape(lb); 
+	}
+	if(document.get_details.obesity[0].checked==true)
+	{
+		ob="yes";
+		document.cookie="obesity="+escape(ob); 
+	}
+	if(document.get_details.fast[0].checked==true)
+	{
+		f="yes";
+		document.cookie="fast="+escape(f); 
+	}
+	if(document.get_details.diet[1].checked==true)
+	{
+		det="yes";
+		document.cookie="diet="+escape(det); 
+	}
+
+	if(document.get_details.job[0].checked==true){
+		j="mental";
+		document.cookie="job="+escape(j);}
+	esle if(document.get_details.job[1].checked==true){
+		j="physical";
+		document.cookie="job="+escape(j); }
+	
+	if(document.get_details.jobhrs[0].checked==true){
+		jh="normal";
+		document.cookie="jobhrs="+escape(jh);}
+	else if(document.get_details.jobhrs[1].checked==true){
+		jh="high";
+		document.cookie="jobhrs="+escape(jh); }
+	else if(document.get_details.jobhrs[2].checked==true){
+		jh="null";
+		document.cookie="jobhrs="+escape(jh); }
+
+	if(document.get_details.sleep[1].checked==true){
+		sl="normal";
+		document.cookie="sleep="+escape(sl); }
+	else if(document.get_details.sleep[0].checked==true){
+		sl="low";
+		document.cookie="sleep="+escape(sl); }
+
+	if(document.get_details.stress[0].checked==true){
+		st="high";
+		document.cookie="stress="+escape(st);}
+	else if(document.get_details.stress[2].checked==true){
+		 st="medium";
+		document.cookie="stress="+escape(st); }
+	
+
+
+
+----------------------------------------------------------------------
+
+
+
+
+var place= document.cookie.match("place" + "=(.*?)(;|$)");
+	if(place)
+	life_m=life_m + 6;
+	
+        var polluted= document.cookie.match("polluted" + "=(.*?)(;|$)");
+	if(polluted)
+	{	life=life - 1;
+		life_m=life_m + 6;
+	}
+	
+       var drive= document.cookie.match("drive" + "=(.*?)(;|$)");
+	if(drive){
+	life_m=life_m + 3;
+	life = life-1;
+	}
+
+	 var smoke= document.cookie.match("smoke" + "=(.*?)(;|$)");
+	if(smoke){
+	life = life-3;
+	}
+	 var drink= document.cookie.match("drink" + "=(.*?)(;|$)");
+	if(drink){
+	life = life-3;
+	}	
+
+	 var diabetes= document.cookie.match("diabetes" + "=(.*?)(;|$)");
+	if(diabetes){
+	life = life-3;
+	}
+
+	var hbp= document.cookie.match("hbp" + "=(.*?)(;|$)");
+	if(hbp){
+	life = life-3;
+	}
+	
+	var lbp= document.cookie.match("lbp" + "=(.*?)(;|$)");
+	if(lbp){
+	life = life-4;
+	}
+	
+	var obesity= document.cookie.match("obesity" + "=(.*?)(;|$)");
+	if(obesity)
+	{
+	    if(age<=40)
+            {
+                if(gender=="female"))
+                    life=life-2;
+                else
+                    life=life-3;
+            }
+            else
+                life=life-1;
+            
+	}
+	
+	var fast= document.cookie.match("fast" + "=(.*?)(;|$)");
+	var diet= document.cookie.match("diet" + "=(.*?)(;|$)");
+	if(fast=="yes" && diet=="yes")
+	{
+		life=life-1;
+                life_m=life_m+6;
+	}
+	else{
+	if(diet=="yes")
+		life_m=life_m + 6;
+	}
+
+	var job= document.cookie.match("job" + "=(.*?)(;|$)");
+	var jobhrs= document.cookie.match("jobhrs" + "=(.*?)(;|$)");
+	     if((job=="mental")&&(jobhrs=="high"))
+                life=life-2;
+             if((job=="mental")&&(jobhrs=="normal"))
+                life_m=life_m + 8;
+             if((job=="mental")&&(jobhrs=="null"))
+                life_m=life_m + 8;
+             if((job=="physical"))&&(jobhrs=="high"))
+                life=life-2;
+	 
+	  
+        var sleep= document.cookie.match("sleep" + "=(.*?)(;|$)");
+	var stress= document.cookie.match("stress" + "=(.*?)(;|$)");
+	 if((stress!=null)&&(sleep!=null))
+        {
+            if((sleep=="low")&&(stress=="high"))
+                life=life - 4;
+            if((sleep=="low")&&(stress=="medium"))
+                life=life - 2;
+            if((sleep=="normal")&&(stress=="high"))
+                life=life - 2;
+        }
+	else
+	{
+		if(stress=="high")
+                  life = life - 2;
+              if(sleep=="low")
+                  life = life - 2;
+             
+	}
+       
+	
+
+	  if(life<=(age+6))
+        {
+            life=age+7;
+        }
+        if((life==77)&& gender=="male")
+        {
+            life=75;
+        }
+         if((life==81)&& gender=="female")
+        {
+            life=80;
+        }
+
+        if(life_m!=0)
+        {
+            q = parseInt(life_m/12);
+            r = parseInt(life_m%12);
+            if(r!=0)
+            {
+                life=life-q-1;
+                month=12-r;
+            }
+            else
+            {
+                life=life-q;
+            }
+        }
+
+-----------------------------------------------------------
+
+document.getElementById("showGen").innerHTML=gender;

@@ -1,0 +1,55 @@
+var n;
+var yr;
+var sex;
+var age;
+
+function validateGeneral()
+{
+	 n=General.name.value;
+	 yr=General.year.value;
+	
+	if(document.General.sex[0].checked==true)
+	{
+		sex="male";
+	}
+	if(document.General.sex[1].checked==true)
+	{
+		sex="female";
+	}
+
+	if(n==""||n==null)
+	{
+	alert("Field must not be empty");
+	return false;
+	}
+	if(yr.length!=4)
+	{
+		alert("Invalid birth year");
+		General.year.focus();
+		return false;
+	}
+	if(yr==""||yr==null)
+	{
+	alert("Field must not be empty");
+	General.year.focus();
+	return false;	
+	}
+	 if(isNaN(yr)==true)
+	{
+		alert("Enter a valide birth year");
+		return false;
+	}
+	age=2017-parseInt(yr);
+	return true;
+
+}
+
+/* Global variables are not pertaining their value in the next module even if the value is not supposed to be retrived from the other form
+	If the value of the previous form is to be diplayed in the current form ....the method called in current form is not capable og reading the previous' value through Id
+*/
+
+function display()
+{
+	
+	document.write("Welcome " + n + " your birth year is "+age+" and you are "+sex);
+}

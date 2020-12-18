@@ -1,0 +1,67 @@
+<html>
+<head>
+</head>
+<body background="bg.jpg" style="background-attachment : fixed">
+<br/><br/>
+<font size="10" face="georgia" color="white"> 
+<center>Questionaire</center>
+</font>
+<hr/>
+<br/><br/>
+
+<font size="6" face="mono-cursive" color="white">
+	<pre>
+	1.  Your residential place is 
+	<font size="5">
+		<input type="radio" name="place" id="q1" value="urban">Urban<small>(city)</small>	<input type="radio" name="place" id="q1" value="rural">Rural<small>(village)</small> 	
+	</font></pre>
+	<pre>
+	2.  Your job at work place is mainly 
+	<font size="5">
+		<input type="radio" name="job" id="q2" value="mental">Mentally done	<input type="radio" name="job" id="q2" value="physical">Physically done
+	</font></pre>
+	<pre>
+	3.  Are you habitual to smoke
+	<font size="5">
+		<input type="radio" name="smoke" id="q3" value="yes">Yes	<input type="radio" name="smoke" id="q3" value="no">No
+	</font></pre>
+	<pre>
+	4.  Are you habitual to drink
+	<font size="5">
+		<input type="radio" name="drink" id="q4" value="yes">Yes	<input type="radio" name="drink" id="q4" value="no">No
+	</font></pre>
+	<pre>
+	5.  Do you skip your breakfast
+	<font size="5">
+		<input type="radio" name="fast" id="q5" value="yes">Yes		<input type="radio" name="fast" id="q5" value="no">No
+	</font></pre>
+	<pre>
+	6.  The stress level at your workplace is
+	<font size="5">
+		<input type="radio" name="stress" id="q6" value="high">High	<input type="radio" name="stress" id="q6" value="low">Low	<input type="radio" name="stress" id="q6" value="medium">Moderate	
+	</font></pre>
+	<pre>
+	7.  Are you diabetic ?
+	<font size="5">
+		<input type="radio" name="diabetes" id="q7" value="yes">Yes		<input type="radio" name="diabetes" id="q7" value="no">No	
+	</font></pre>
+	<pre>
+	8.  Do you have a high BP ?
+	<font size="5">
+		<input type="radio" name="hbp" id="q8" value="yes">Yes		<input type="radio" name="hbp" id="q8" value="no">No	
+	</font></pre>
+	<pre>
+	9.  Do you have a low BP ?
+	<font size="5">
+		<input type="radio" name="lbp" id="q9" value="yes">Yes		<input type="radio" name="lbp" id="q9" value="no">No	
+	</font></pre>
+	<pre>
+	10.  Are you Obessed ?
+	<font size="5">
+		<input type="radio" name="obesity" id="q10" value="yes">Yes		<input type="radio" name="obesity" id="q10" value="no">No	
+	</font></pre>
+	
+</font>
+
+</body>
+</html>
